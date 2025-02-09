@@ -12,9 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>FLO</title>
     <style>
-      :root{
-        --swiper-navigation-sides-offset: -1rem; /* offset for navigation */
-      }
       body{
         background-image: url("_FLO background.png");
         background-size: 100vh;
@@ -170,295 +167,295 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid w-100 h-100">
+  <div class="container-fluid w-100 h-100">
+    <div class="row flex-nowrap">
+      
       <div class="row flex-nowrap">
-        <div class="offcanvas offcanvas-start p-0 m-0 sidebar-nav" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="usersidebar" aria-labelledby="usersidebar">
-          <div class="offcanvas-header p-3 ms-2 mb-4">
-            <i class="img-fluid">
-              <img src="assets/FLO_LOGO.png" alt="logo" class="flo-logo-home">    
-            </i>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+      <!-- Main Feed -->
+      <main class="col p-0">
+        <nav class="navbar navbar-expand-lg bg-body flex-nowrap topnav">
+          <div class="container-fluid d-flex">
+            <ul class="navbar-nav nav-left align-items-center nav1">
+              <button href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="btn" type="button">
+                <img src="assets/OptionIcon.png" class="sidebutton">
+              </button>
+              <a class="nav-link m-0" href="#">
+                <i class="img-fluid">
+                  <img src="assets/FLO_LOGO.png" alt="logo" class="flo-logo-home">    
+                </i>
+              </a>
+            </ul>
+
+            <div class="container-fluid searchbarDIV">
+                <div class="input-group">
+                  <input type="text" class="form-control rounded-5 searchbarcolor large" placeholder="Search..." aria-label="Search" aria-describedby="search-addon">
+                  <input type="text" class="form-control rounded-5 searchbarcolor small" placeholder="" aria-label="Search" aria-describedby="search-addon">
+                  <button class="btn search-bar-icon rounded-5" type="button" id="search-addon">
+                    <i class="fas fa-search text-primary"></i>
+                  </button>
+                </div>
+            </div>
+            
+                  
+            <ul class="navbar-nav me-2 nav-right nav2">
+              <li class="nav-item dropdown">
+                <button class="nav-link flo-logo-notif" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-bell-fill"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  Puti nagseselos ako
+                </ul>
+              </li>
+              <a class="nav-link border" href="#">
+                <i class="img-placeholder">
+                  <img src="https://via.placeholder.com/30" alt="profile">    
+                </i>
+              </a>
+            </ul>
+
           </div>
-          <!-- Buttons  -->
-          <div class="offcanvas-body p-0 m-0 w-100 h-100 row">
-            <div class="row sidebar-btn-group h-50 p-0 m-0">
-              <button class="btn text-sm-start">
-                <i class="bi bi-house-door-fill mx-2 ms-4"></i>
-                <span class="sidebar-text">Home</span>
-              </button>
-              <button class="btn text-sm-start">
-                <i class="bi bi-exclamation-triangle-fill mx-2 ms-4"></i>
-                <span class="sidebar-text">Report</span>
-              </button>
-              <button class="btn sidebar-btn text-sm-start">
-                <i class="bi bi-archive-fill mx-2 ms-4"></i>
-                <span class="sidebar-text">Item History</span>
-              </button>
-              <button class="btn sidebar-btn text-sm-start">
-                <i class="bi bi-envelope-fill mx-2 ms-4"></i>
-                <span class="sidebar-text">Messages</span>
-              </button>
-            </div>
-            <!-- Support Section -->
-            <div class="offcanvas-support row py-2 px-4 m-0">
-              <a class="text-decoration-none fs-6">
-                <i class="bi bi-headset"></i>
-                <small class="text-decoration-none">Need help?</small>
-              </a>
-              <br>
-              <hr class="m-auto">
-              <span class="fs-6">For inquiries and suggestions</span>
-              <a class="fs-6 text-decoration-none">
-                <small class="text-dark">What</small>
-                <small class="">About us</small>
-                <small class="text-dark">?</small>
-              </a>
-            </div>
-            <!-- Footer  -->
-            <div class="p-0 mt-5">
-              <a href="#" class="text-decoration-none mx-4">
-                <img class="img-fluid signout-icon" src="assets/logOutIcon.png" alt="signouticon">
-                <small class="mx-1">Sign-out</small>
-              </a>
+        </nav>
+
+        <div class="col-3 px-0">
+          <div cid="sidebar" class="collapse collapse-horizontal show border-end">
+            <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
+              <!-- Buttons  -->
+              <div class="offcanvas-body p-0 m-0 w-100 h-100 row">
+                <div class="row sidebar-btn-group h-50 p-0 m-0 text-xl">
+                  <button class="btn text-start">
+                    <i class="bi bi-house-door-fill mx-2 ms-4"></i>
+                    <span class="sidebar-text">Home</span>
+                  </button>
+                  <button class="btn text-start">
+                    <i class="bi bi-exclamation-triangle-fill mx-2 ms-4"></i>
+                    <span class="sidebar-text">Report</span>
+                  </button>
+                  <button class="btn sidebar-btn text-start">
+                    <i class="bi bi-archive-fill mx-2 ms-4"></i>
+                    <span class="sidebar-text">Item History</span>
+                  </button>
+                  <button class="btn sidebar-btn text-start">
+                    <i class="bi bi-envelope-fill mx-2 ms-4"></i>
+                    <span class="sidebar-text">Messages</span>
+                  </button>
+                </div>
+                <!-- Support Section -->
+                <div class="offcanvas-support row py-2 px-4 m-0">
+                  <a class="text-decoration-none fs-6">
+                    <i class="bi bi-headset"></i>
+                    <small class="text-decoration-none">Need help?</small>
+                  </a>
+                  <br>
+                  <hr class="m-auto">
+                  <span class="fs-6">For inquiries and suggestions</span>
+                  <a class="fs-6 text-decoration-none">
+                    <small class="text-dark">What</small>
+                    <small class="">About us</small>
+                    <small class="text-dark">?</small>
+                  </a>
+                </div>
+                <!-- Footer  -->
+                <div class="p-0 mt-5">
+                  <a href="#" class="text-decoration-none mx-4">
+                    <img class="img-fluid signout-icon" src="assets/logOutIcon.png" alt="signouticon">
+                    <small class="mx-1">Sign-out</small>
+                  </a>
+                </div>
             </div>
           </div>
         </div>
 
-        <!-- Main Feed -->
-        <main class="col p-0">
-          <nav class="navbar navbar-expand-lg bg-body flex-nowrap topnav">
-            <div class="container-fluid d-flex">
-              <ul class="navbar-nav nav-left align-items-center nav1">
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#usersidebar" aria-controls="usersidebar">
-                  <img src="assets/OptionIcon.png" class="sidebutton">
-                </button>
-                <a class="nav-link m-0" href="#">
-                  <i class="img-fluid">
-                    <img src="assets/FLO_LOGO.png" alt="logo" class="flo-logo-home">    
-                  </i>
-                </a>
-              </ul>
 
-              <div class="container-fluid d-flex searchbarDIV ">
-                  <div class="input-group start-0 ">
-                    <input type="text" class="form-control rounded-5 searchbarcolor large" placeholder="Search..." aria-label="Search" aria-describedby="search-addon">
-                    <input type="text" class="form-control rounded-5 searchbarcolor small" placeholder="" aria-label="Search" aria-describedby="search-addon">
-                    <button class="btn search-bar-icon rounded-5" type="button" id="search-addon">
-                      <i class="fas fa-search text-primary"></i>
-                    </button>
+          <!-- Content -->
+          <div class="container-fluid p-5 bg-image">
+                <div class="row p-5">
+
+                  <div class="page-header py-5 mx-4 d-flex">
+                    <h2 class="Feedheader">Recently reported</h2>
                   </div>
-              </div>
-              
-                    
-              <ul class="navbar-nav me-2 nav-right nav2">
-                <li class="nav-item dropdown">
-                  <button class="nav-link flo-logo-notif" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-bell-fill"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    Puti nagseselos ako
-                  </ul>
-                </li>
-                <a class="nav-link border" href="#">
-                  <i class="img-placeholder">
-                    <img src="https://via.placeholder.com/30" alt="profile">    
-                  </i>
-                </a>
-              </ul>
 
-            </div>
-          </nav>
-
-                <!-- Content -->
-                <div class="container bg-image">
-
-                  <div class="page-header py-5 d-flex">
-                    <h2 class="Feedheader">Report Feed</h2>
-                  </div>
-                  
-                  <div class="row">
-                    <div class="swiper mySwiper">
-
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                          <div class="container card rounded-3 px-2 py-1 reportcard">
-                            <div class="card-body-status p-1 ">
-                              <i class="bi bi-exclamation-triangle-fill text-danger"></i>
-                              <small class="text-light">Missing an Item</small>
+                  <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="container card rounded-3 py-1 reportcard">
+                          <div class="card-body-status p-1 ">
+                            <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                            <small class="text-light">Missing an Item</small>
+                          </div>
+                          <div class="container d-flex px-3">
+                            <i class="bi bi-person-fill fa-5x text-light"></i>
+                            <div class="container my-4">
+                              <span class="text-sm text-light">Username</span>
+                              <br>
+                              <small class="text-sm text-dark">10s Ago</small>
                             </div>
-                            <div class="container d-flex px-3">
-                              <i class="bi bi-person-fill fa-5x text-light"></i>
-                              <div class="container my-4">
-                                <span class="text-sm text-light">Username</span>
-                                <br>
-                                <small class="text-sm text-dark">10s Ago</small>
-                              </div>
+                          </div>
+                          <div class="card-body d-flex border border-info px-3 info">
+                            <div class="row col-8">
+                              <small class="text-light">Name:</small>
+                              <small class="text-light">Role:</small>
+                              <small class="text-light">Contact:</small>
+                              <small class="text-light">Lost Item:</small>
                             </div>
-                            <div class="card-body d-flex border border-info px-3 info">
-                              <div class="row col-8">
-                                <small class="text-light">Name:</small>
-                                <small class="text-light">Role:</small>
-                                <small class="text-light">Contact:</small>
-                                <small class="text-light">Lost Item:</small>
-                              </div>
-                              <div class="container col">
-                                <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
-                              </div>
+                            <div class="container col">
+                              <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
                             </div>
-                            <div class="container py-2">
-                              <a href="#" class="claim-btn btn col-8">Claim</a>
-                              <a href="#" class="btn end-100">
-                                <i class="bi bi-chat-dots text-light fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>  
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="container card rounded-3 px-2 py-1 reportcard">
-                            <div class="card-body-status p-1 ">
-                              <i class="bi bi-exclamation-triangle-fill text-danger"></i>
-                              <small class="text-light">Missing an Item</small>
-                            </div>
-                            <div class="container d-flex px-3">
-                              <i class="bi bi-person-fill fa-5x text-light"></i>
-                              <div class="container my-4">
-                                <span class="text-sm text-light">Username</span>
-                                <br>
-                                <small class="text-sm text-dark">10s Ago</small>
-                              </div>
-                            </div>
-                            <div class="card-body d-flex border border-info px-3 info">
-                              <div class="row col-8">
-                                <small class="text-light">Name:</small>
-                                <small class="text-light">Role:</small>
-                                <small class="text-light">Contact:</small>
-                                <small class="text-light">Lost Item:</small>
-                              </div>
-                              <div class="container col">
-                                <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
-                              </div>
-                            </div>
-                            <div class="container py-2">
-                              <a href="#" class="claim-btn btn col-8">Claim</a>
-                              <a href="#" class="btn end-100">
-                                <i class="bi bi-chat-dots text-light fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>  
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="container card rounded-3 px-2 py-1 reportcard">
-                            <div class="card-body-status p-1 ">
-                              <i class="bi bi-exclamation-triangle-fill text-danger"></i>
-                              <small class="text-light">Missing an Item</small>
-                            </div>
-                            <div class="container d-flex px-3">
-                              <i class="bi bi-person-fill fa-5x text-light"></i>
-                              <div class="container my-4">
-                                <span class="text-sm text-light">Username</span>
-                                <br>
-                                <small class="text-sm text-dark">10s Ago</small>
-                              </div>
-                            </div>
-                            <div class="card-body d-flex border border-info px-3 info">
-                              <div class="row col-8">
-                                <small class="text-light">Name:</small>
-                                <small class="text-light">Role:</small>
-                                <small class="text-light">Contact:</small>
-                                <small class="text-light">Lost Item:</small>
-                              </div>
-                              <div class="container col">
-                                <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
-                              </div>
-                            </div>
-                            <div class="container py-2">
-                              <a href="#" class="claim-btn btn col-8">Claim</a>
-                              <a href="#" class="btn end-100">
-                                <i class="bi bi-chat-dots text-light fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>  
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="container card rounded-3 px-2 py-1 reportcard">
-                            <div class="card-body-status p-1 ">
-                              <i class="bi bi-exclamation-triangle-fill text-danger"></i>
-                              <small class="text-light">Missing an Item</small>
-                            </div>
-                            <div class="container d-flex px-3">
-                              <i class="bi bi-person-fill fa-5x text-light"></i>
-                              <div class="container my-4">
-                                <span class="text-sm text-light">Username</span>
-                                <br>
-                                <small class="text-sm text-dark">10s Ago</small>
-                              </div>
-                            </div>
-                            <div class="card-body d-flex border border-info px-3 info">
-                              <div class="row col-8">
-                                <small class="text-light">Name:</small>
-                                <small class="text-light">Role:</small>
-                                <small class="text-light">Contact:</small>
-                                <small class="text-light">Lost Item:</small>
-                              </div>
-                              <div class="container col">
-                                <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
-                              </div>
-                            </div>
-                            <div class="container py-2">
-                              <a href="#" class="claim-btn btn col-8">Claim</a>
-                              <a href="#" class="btn end-100">
-                                <i class="bi bi-chat-dots text-light fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>  
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="container card rounded-3 px-2 py-1 reportcard">
-                            <div class="card-body-status p-1 ">
-                              <i class="bi bi-exclamation-triangle-fill text-danger"></i>
-                              <small class="text-light">Missing an Item</small>
-                            </div>
-                            <div class="container d-flex px-3">
-                              <i class="bi bi-person-fill fa-5x text-light"></i>
-                              <div class="container my-4">
-                                <span class="text-sm text-light">Username</span>
-                                <br>
-                                <small class="text-sm text-dark">10s Ago</small>
-                              </div>
-                            </div>
-                            <div class="card-body d-flex border border-info px-3 info">
-                              <div class="row col-8">
-                                <small class="text-light">Name:</small>
-                                <small class="text-light">Role:</small>
-                                <small class="text-light">Contact:</small>
-                                <small class="text-light">Lost Item:</small>
-                              </div>
-                              <div class="container col">
-                                <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
-                              </div>
-                            </div>
-                            <div class="container py-2">
-                              <a href="#" class="claim-btn btn col-8">Claim</a>
-                              <a href="#" class="btn end-100">
-                                <i class="bi bi-chat-dots text-light fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>  
-                        </div>
-                         
-
-
+                          </div>
+                          <div class="container py-2">
+                            <a href="#" class="claim-btn btn col-8">Claim</a>
+                            <a href="#" class="btn end-100">
+                              <i class="bi bi-chat-dots text-light fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>  
                       </div>
+                      <div class="swiper-slide">
+                        <div class="container card rounded-3 px-2 py-1 reportcard">
+                          <div class="card-body-status p-1 ">
+                            <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                            <small class="text-light">Missing an Item</small>
+                          </div>
+                          <div class="container d-flex px-3">
+                            <i class="bi bi-person-fill fa-5x text-light"></i>
+                            <div class="container my-4">
+                              <span class="text-sm text-light">Username</span>
+                              <br>
+                              <small class="text-sm text-dark">10s Ago</small>
+                            </div>
+                          </div>
+                          <div class="card-body d-flex border border-info px-3 info">
+                            <div class="row col-8">
+                              <small class="text-light">Name:</small>
+                              <small class="text-light">Role:</small>
+                              <small class="text-light">Contact:</small>
+                              <small class="text-light">Lost Item:</small>
+                            </div>
+                            <div class="container col">
+                              <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                            </div>
+                          </div>
+                          <div class="container py-2">
+                            <a href="#" class="claim-btn btn col-8">Claim</a>
+                            <a href="#" class="btn end-100">
+                              <i class="bi bi-chat-dots text-light fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>  
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="container card rounded-3 px-2 py-1 reportcard">
+                          <div class="card-body-status p-1 ">
+                            <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                            <small class="text-light">Missing an Item</small>
+                          </div>
+                          <div class="container d-flex px-3">
+                            <i class="bi bi-person-fill fa-5x text-light"></i>
+                            <div class="container my-4">
+                              <span class="text-sm text-light">Username</span>
+                              <br>
+                              <small class="text-sm text-dark">10s Ago</small>
+                            </div>
+                          </div>
+                          <div class="card-body d-flex border border-info px-3 info">
+                            <div class="row col-8">
+                              <small class="text-light">Name:</small>
+                              <small class="text-light">Role:</small>
+                              <small class="text-light">Contact:</small>
+                              <small class="text-light">Lost Item:</small>
+                            </div>
+                            <div class="container col">
+                              <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                            </div>
+                          </div>
+                          <div class="container py-2">
+                            <a href="#" class="claim-btn btn col-8">Claim</a>
+                            <a href="#" class="btn end-100">
+                              <i class="bi bi-chat-dots text-light fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>  
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="container card rounded-3 px-2 py-1 reportcard">
+                          <div class="card-body-status p-1 ">
+                            <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                            <small class="text-light">Missing an Item</small>
+                          </div>
+                          <div class="container d-flex px-3">
+                            <i class="bi bi-person-fill fa-5x text-light"></i>
+                            <div class="container my-4">
+                              <span class="text-sm text-light">Username</span>
+                              <br>
+                              <small class="text-sm text-dark">10s Ago</small>
+                            </div>
+                          </div>
+                          <div class="card-body d-flex border border-info px-3 info">
+                            <div class="row col-8">
+                              <small class="text-light">Name:</small>
+                              <small class="text-light">Role:</small>
+                              <small class="text-light">Contact:</small>
+                              <small class="text-light">Lost Item:</small>
+                            </div>
+                            <div class="container col">
+                              <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                            </div>
+                          </div>
+                          <div class="container py-2">
+                            <a href="#" class="claim-btn btn col-8">Claim</a>
+                            <a href="#" class="btn end-100">
+                              <i class="bi bi-chat-dots text-light fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>  
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="container card rounded-3 px-2 py-1 reportcard">
+                          <div class="card-body-status p-1 ">
+                            <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                            <small class="text-light">Missing an Item</small>
+                          </div>
+                          <div class="container d-flex px-3">
+                            <i class="bi bi-person-fill fa-5x text-light"></i>
+                            <div class="container my-4">
+                              <span class="text-sm text-light">Username</span>
+                              <br>
+                              <small class="text-sm text-dark">10s Ago</small>
+                            </div>
+                          </div>
+                          <div class="card-body d-flex border border-info px-3 info">
+                            <div class="row col-8">
+                              <small class="text-light">Name:</small>
+                              <small class="text-light">Role:</small>
+                              <small class="text-light">Contact:</small>
+                              <small class="text-light">Lost Item:</small>
+                            </div>
+                            <div class="container col">
+                              <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                            </div>
+                          </div>
+                          <div class="container py-2">
+                            <a href="#" class="claim-btn btn col-8">Claim</a>
+                            <a href="#" class="btn end-100">
+                              <i class="bi bi-chat-dots text-light fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>  
+                      </div>
+                        
 
-                      <!-- Nav arrows -->
-                      <div class="swiper-button-next"></div>
-                      <div class="swiper-button-prev"></div>
+
                     </div>
-                  
+
+                    <!-- Nav arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+                
 
                   <div class="container py-5">
                     <hr>
-                    <h2>Recent</h2>
+                    <h2>Recently Found</h2>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -468,94 +465,395 @@
 
                   <div class="swiper mySwiper">
 
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">container Card title</h5>
-                            <p class="card-text">Some quick example text to build on the container card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>  
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">container Card title</h5>
-                            <p class="card-text">Some quick example text to build on the container card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="container card rounded-3 px-2 py-1 reportcard">
+                        <div class="card-body-status p-1 ">
+                          <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                          <small class="text-light">Missing an Item</small>
+                        </div>
+                        <div class="container d-flex px-3">
+                          <i class="bi bi-person-fill fa-5x text-light"></i>
+                          <div class="container my-4">
+                            <span class="text-sm text-light">Username</span>
+                            <br>
+                            <small class="text-sm text-dark">10s Ago</small>
                           </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">container Card title</h5>
-                            <p class="card-text">Some quick example text to build on the container card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="card-body d-flex border border-info px-3 info">
+                          <div class="row col-8">
+                            <small class="text-light">Name:</small>
+                            <small class="text-light">Role:</small>
+                            <small class="text-light">Contact:</small>
+                            <small class="text-light">Lost Item:</small>
+                          </div>
+                          <div class="container col">
+                            <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
                           </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">container Card title</h5>
-                            <p class="card-text">Some quick example text to build on the container card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
+                        <div class="container py-2">
+                          <a href="#" class="claim-btn btn col-8">Claim</a>
+                          <a href="#" class="btn end-100">
+                            <i class="bi bi-chat-dots text-light fa-2x"></i>
+                          </a>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">container Card title</h5>
-                            <p class="card-text">Some quick example text to build on the container card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">container Card title</h5>
-                            <p class="card-text">Some quick example text to build on the container card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">container Card title</h5>
-                            <p class="card-text">Some quick example text to build on the container card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div> 
-
-
+                      </div>  
                     </div>
+                    <div class="swiper-slide">
+                      <div class="container card rounded-3 px-2 py-1 reportcard">
+                        <div class="card-body-status p-1 ">
+                          <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                          <small class="text-light">Missing an Item</small>
+                        </div>
+                        <div class="container d-flex px-3">
+                          <i class="bi bi-person-fill fa-5x text-light"></i>
+                          <div class="container my-4">
+                            <span class="text-sm text-light">Username</span>
+                            <br>
+                            <small class="text-sm text-dark">10s Ago</small>
+                          </div>
+                        </div>
+                        <div class="card-body d-flex border border-info px-3 info">
+                          <div class="row col-8">
+                            <small class="text-light">Name:</small>
+                            <small class="text-light">Role:</small>
+                            <small class="text-light">Contact:</small>
+                            <small class="text-light">Lost Item:</small>
+                          </div>
+                          <div class="container col">
+                            <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                          </div>
+                        </div>
+                        <div class="container py-2">
+                          <a href="#" class="claim-btn btn col-8">Claim</a>
+                          <a href="#" class="btn end-100">
+                            <i class="bi bi-chat-dots text-light fa-2x"></i>
+                          </a>
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="container card rounded-3 px-2 py-1 reportcard">
+                        <div class="card-body-status p-1 ">
+                          <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                          <small class="text-light">Missing an Item</small>
+                        </div>
+                        <div class="container d-flex px-3">
+                          <i class="bi bi-person-fill fa-5x text-light"></i>
+                          <div class="container my-4">
+                            <span class="text-sm text-light">Username</span>
+                            <br>
+                            <small class="text-sm text-dark">10s Ago</small>
+                          </div>
+                        </div>
+                        <div class="card-body d-flex border border-info px-3 info">
+                          <div class="row col-8">
+                            <small class="text-light">Name:</small>
+                            <small class="text-light">Role:</small>
+                            <small class="text-light">Contact:</small>
+                            <small class="text-light">Lost Item:</small>
+                          </div>
+                          <div class="container col">
+                            <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                          </div>
+                        </div>
+                        <div class="container py-2">
+                          <a href="#" class="claim-btn btn col-8">Claim</a>
+                          <a href="#" class="btn end-100">
+                            <i class="bi bi-chat-dots text-light fa-2x"></i>
+                          </a>
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="container card rounded-3 px-2 py-1 reportcard">
+                        <div class="card-body-status p-1 ">
+                          <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                          <small class="text-light">Missing an Item</small>
+                        </div>
+                        <div class="container d-flex px-3">
+                          <i class="bi bi-person-fill fa-5x text-light"></i>
+                          <div class="container my-4">
+                            <span class="text-sm text-light">Username</span>
+                            <br>
+                            <small class="text-sm text-dark">10s Ago</small>
+                          </div>
+                        </div>
+                        <div class="card-body d-flex border border-info px-3 info">
+                          <div class="row col-8">
+                            <small class="text-light">Name:</small>
+                            <small class="text-light">Role:</small>
+                            <small class="text-light">Contact:</small>
+                            <small class="text-light">Lost Item:</small>
+                          </div>
+                          <div class="container col">
+                            <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                          </div>
+                        </div>
+                        <div class="container py-2">
+                          <a href="#" class="claim-btn btn col-8">Claim</a>
+                          <a href="#" class="btn end-100">
+                            <i class="bi bi-chat-dots text-light fa-2x"></i>
+                          </a>
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="container card rounded-3 px-2 py-1 reportcard">
+                        <div class="card-body-status p-1 ">
+                          <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                          <small class="text-light">Missing an Item</small>
+                        </div>
+                        <div class="container d-flex px-3">
+                          <i class="bi bi-person-fill fa-5x text-light"></i>
+                          <div class="container my-4">
+                            <span class="text-sm text-light">Username</span>
+                            <br>
+                            <small class="text-sm text-dark">10s Ago</small>
+                          </div>
+                        </div>
+                        <div class="card-body d-flex border border-info px-3 info">
+                          <div class="row col-8">
+                            <small class="text-light">Name:</small>
+                            <small class="text-light">Role:</small>
+                            <small class="text-light">Contact:</small>
+                            <small class="text-light">Lost Item:</small>
+                          </div>
+                          <div class="container col">
+                            <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                          </div>
+                        </div>
+                        <div class="container py-2">
+                          <a href="#" class="claim-btn btn col-8">Claim</a>
+                          <a href="#" class="btn end-100">
+                            <i class="bi bi-chat-dots text-light fa-2x"></i>
+                          </a>
+                        </div>
+                      </div>  
+                    </div>
+                      
 
-                    <!-- Nav arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+
                   </div>
 
+                  <!-- Nav arrows -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  </div>
+
+
+
+                <div class="container py-5">
+                  <hr>
+                  <h2>Recently Lost</h2>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                  </div>
                 </div>
-            </main>
-        </div>
+
+                <div class="swiper mySwiper">
+
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="container card rounded-3 px-2 py-1 reportcard">
+                      <div class="card-body-status p-1 ">
+                        <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                        <small class="text-light">Missing an Item</small>
+                      </div>
+                      <div class="container d-flex px-3">
+                        <i class="bi bi-person-fill fa-5x text-light"></i>
+                        <div class="container my-4">
+                          <span class="text-sm text-light">Username</span>
+                          <br>
+                          <small class="text-sm text-dark">10s Ago</small>
+                        </div>
+                      </div>
+                      <div class="card-body d-flex border border-info px-3 info">
+                        <div class="row col-8">
+                          <small class="text-light">Name:</small>
+                          <small class="text-light">Role:</small>
+                          <small class="text-light">Contact:</small>
+                          <small class="text-light">Lost Item:</small>
+                        </div>
+                        <div class="container col">
+                          <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                        </div>
+                      </div>
+                      <div class="container py-2">
+                        <a href="#" class="claim-btn btn col-8">Claim</a>
+                        <a href="#" class="btn end-100">
+                          <i class="bi bi-chat-dots text-light fa-2x"></i>
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="container card rounded-3 px-2 py-1 reportcard">
+                      <div class="card-body-status p-1 ">
+                        <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                        <small class="text-light">Missing an Item</small>
+                      </div>
+                      <div class="container d-flex px-3">
+                        <i class="bi bi-person-fill fa-5x text-light"></i>
+                        <div class="container my-4">
+                          <span class="text-sm text-light">Username</span>
+                          <br>
+                          <small class="text-sm text-dark">10s Ago</small>
+                        </div>
+                      </div>
+                      <div class="card-body d-flex border border-info px-3 info">
+                        <div class="row col-8">
+                          <small class="text-light">Name:</small>
+                          <small class="text-light">Role:</small>
+                          <small class="text-light">Contact:</small>
+                          <small class="text-light">Lost Item:</small>
+                        </div>
+                        <div class="container col">
+                          <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                        </div>
+                      </div>
+                      <div class="container py-2">
+                        <a href="#" class="claim-btn btn col-8">Claim</a>
+                        <a href="#" class="btn end-100">
+                          <i class="bi bi-chat-dots text-light fa-2x"></i>
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="container card rounded-3 px-2 py-1 reportcard">
+                      <div class="card-body-status p-1 ">
+                        <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                        <small class="text-light">Missing an Item</small>
+                      </div>
+                      <div class="container d-flex px-3">
+                        <i class="bi bi-person-fill fa-5x text-light"></i>
+                        <div class="container my-4">
+                          <span class="text-sm text-light">Username</span>
+                          <br>
+                          <small class="text-sm text-dark">10s Ago</small>
+                        </div>
+                      </div>
+                      <div class="card-body d-flex border border-info px-3 info">
+                        <div class="row col-8">
+                          <small class="text-light">Name:</small>
+                          <small class="text-light">Role:</small>
+                          <small class="text-light">Contact:</small>
+                          <small class="text-light">Lost Item:</small>
+                        </div>
+                        <div class="container col">
+                          <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                        </div>
+                      </div>
+                      <div class="container py-2">
+                        <a href="#" class="claim-btn btn col-8">Claim</a>
+                        <a href="#" class="btn end-100">
+                          <i class="bi bi-chat-dots text-light fa-2x"></i>
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="container card rounded-3 px-2 py-1 reportcard">
+                      <div class="card-body-status p-1 ">
+                        <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                        <small class="text-light">Missing an Item</small>
+                      </div>
+                      <div class="container d-flex px-3">
+                        <i class="bi bi-person-fill fa-5x text-light"></i>
+                        <div class="container my-4">
+                          <span class="text-sm text-light">Username</span>
+                          <br>
+                          <small class="text-sm text-dark">10s Ago</small>
+                        </div>
+                      </div>
+                      <div class="card-body d-flex border border-info px-3 info">
+                        <div class="row col-8">
+                          <small class="text-light">Name:</small>
+                          <small class="text-light">Role:</small>
+                          <small class="text-light">Contact:</small>
+                          <small class="text-light">Lost Item:</small>
+                        </div>
+                        <div class="container col">
+                          <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                        </div>
+                      </div>
+                      <div class="container py-2">
+                        <a href="#" class="claim-btn btn col-8">Claim</a>
+                        <a href="#" class="btn end-100">
+                          <i class="bi bi-chat-dots text-light fa-2x"></i>
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="container card rounded-3 px-2 py-1 reportcard">
+                      <div class="card-body-status p-1 ">
+                        <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                        <small class="text-light">Missing an Item</small>
+                      </div>
+                      <div class="container d-flex px-3">
+                        <i class="bi bi-person-fill fa-5x text-light"></i>
+                        <div class="container my-4">
+                          <span class="text-sm text-light">Username</span>
+                          <br>
+                          <small class="text-sm text-dark">10s Ago</small>
+                        </div>
+                      </div>
+                      <div class="card-body d-flex border border-info px-3 info">
+                        <div class="row col-8">
+                          <small class="text-light">Name:</small>
+                          <small class="text-light">Role:</small>
+                          <small class="text-light">Contact:</small>
+                          <small class="text-light">Lost Item:</small>
+                        </div>
+                        <div class="container col">
+                          <img class="justify-content-center align-items-center" src="https://via.placeholder.com/30" alt="items">    
+                        </div>
+                      </div>
+                      <div class="container py-2">
+                        <a href="#" class="claim-btn btn col-8">Claim</a>
+                        <a href="#" class="btn end-100">
+                          <i class="bi bi-chat-dots text-light fa-2x"></i>
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                    
+
+
+                </div>
+
+                <!-- Nav arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </main>
     </div>
+  </div>
 </body>
 
 <script>
   var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 30,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -566,15 +864,15 @@
       },
       768: {
         slidesPerView: 2,
+        spaceBetween: 0
       },
       1024: {
         slidesPerView: 3,
-        spaceBetweenSlides: 0
       },
       1440: {
         slidesPerView: 4,
       },
-      2460: {
+      2560: {
         slidesPerView: 5,
       },
         }
