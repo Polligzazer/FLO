@@ -41,10 +41,8 @@
       }
       .nav1{
         margin:24px;
+
       }
-      /* .nav2{
-        width: 15%;
-      } */
       .flo-logo-home{
         width: clamp(75px, 10vw, 110px);
         height: auto;
@@ -117,74 +115,11 @@
       }
       .categories-text{
         font-family:"DM Sans", sans-serif;
-	      font-weight:500;
+	      font-weight:800;
 	      font-size:25px;
-	      color:#2e2d2d;
-        
+	      color:#212020;
       }
-      .sidebar-nav{
-        padding: 1rem;
-        padding-top: 1.5rem;
-        background-color: #f1f7ff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 16.28rem !important;
 
-        border: 0 !important;
-      }
-      .sidebar-button{
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-        width:100%;
-        height:3.82rem;
-        padding-left: 20%;
-        font-family:"Poppins", sans-serif;
-	      font-size:14.6px;
-	      color:#0E5CC5;
-        
-      }
-      .home-button.active{
-        background-color:#abdbff;
-	      border-left:5px solid #0e5cc5 !important;
-        border-radius: 0px !important;
-        border-right: none;
-      }
-      .aboutuslink{
-        font-family:"Work Sans", sans-serif;
-        font-size: 13px;
-	      color:#3998ff;
-      }
-      .logoutlink{
-        font-family:"Work Sans", sans-serif;
-        font-size: 13px;
-	      color:#3998ff;
-        opacity: 80%;
-      }
-      .message{
-        font-family:"Work Sans", sans-serif;
-	      font-size: 13px;
-	      color:#636363;
-      }
-      .report-status{
-        font-family:"Poppins", sans-serif;
-	      font-size:10.8px;
-	      font-weight:600;
-	      color:white;
-      }
-      .username{
-        font-family:"Work Sans", sans-serif;
-	      font-size:14.59px;
-	      color:white;
-      }
-      .dateposted{
-        font-family:"Poppins", sans-serif;
-	      font-size:12.4px;
-	      color:#e2f9ff;
-
-      }
       @media (max-width: 470px){
        .nav1{ 
         margin:7px;
@@ -202,22 +137,13 @@
        .searchbarDIV{
         width: 300px;
        }
-        .sidebar-nav{
-          background-color: #fafcff;
-          width: 100% !important;
+      .sidebar-nav{
+        background-color: #fafcff;
+        width: 100% !important;
 
-          justify-content: center;
-          align-items: center;
-        }
-        .sidebar-btn-group button{
-          font-size: 20px;
-          color: #2169ac;
-          width: 100% !important;
-        }
-        .sidebar-text{
-          display: none;
-        }
-
+        justify-content: center;
+        align-items: center;
+      }
       }
       @media (max-width: 768px){
         input.large{
@@ -228,8 +154,7 @@
         }
       }
       .reportcard{
-        width: clamp(250px, 20vw, 350px);
-        height: auto;
+        width: 250px
        }
 
        .info{
@@ -238,9 +163,13 @@
        input:focus {box-shadow:none !important;
         background-color: none ;
       }
+      .sidebar-nav{
+        background-color: #fafcff;
+        width: 10rem;
+      }
       .sidebar-btn-group button{
         font-size: 20px;
-        color: #0e5cc5;
+        color: #2169ac;
         width: 100% !important;
       }
       .signout-icon{
@@ -262,70 +191,58 @@
 <body>
     <div class="container-fluid w-100 h-100">
       <div class="row flex-nowrap">
-        <div class="offcanvas offcanvas-start p-0 m-0 sidebar-nav" data-bs-scroll="true" tabindex="-1" data-bs-backdrop="false" id="usersidebar" aria-labelledby="usersidebar">
-          <ul class="offcanvas-header my-3">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#usersidebar" aria-controls="usersidebar">
-              <img src="OptionIcon.png" class="sidebutton">
-            </button>
-            <a class="nav-link m-0 ms-2" href="#">
-              <i class="img-fluid">
-                <img src="_FLO_LOGO.png" alt="logo" class="flo-logo-home">    
-              </i>
-            </a>
-          </ul>
+        <div class="offcanvas offcanvas-start p-0 m-0 sidebar-nav" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="usersidebar" aria-labelledby="usersidebar">
+          <div class="offcanvas-header p-3 ms-2 mb-4">
+            <i class="img-fluid">
+              <img src="_FLO_LOGO.png" alt="logo" class="flo-logo-home">    
+            </i>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
           <!-- Buttons  -->
-          <div class="offcanvas-body p-0 m-0">
-            <div class="sidebar-btn-group w-100 pt-4 m-0">
-              <button class="btn text-sm-center fs-6 border-right-0 border-bottom-0 border-top-0 home-button active">
-                <div class="sidebar-button">
-                  <i class="bi bi-house-door-fill sidebar-icon fa-xl pe-4"></i>
-                  <span class="sidebar-text">Home</span>
-                </div>
+          <div class="offcanvas-body p-0 m-0 w-100 h-100 row">
+            <div class="row sidebar-btn-group h-50 p-0 m-0">
+              <button class="btn text-sm-start">
+                <i class="bi bi-house-door-fill mx-2 ms-4"></i>
+                <span class="sidebar-text">Home</span>
               </button>
-              <button class="btn text-sm-center fs-6 report-button">
-                <div class="sidebar-button">
-                  <i class="bi bi-exclamation-triangle-fill sidebar-icon fa-xl pe-4"></i>
-                  <span class="sidebar-text">Report</span>
-                </div>
+              <button class="btn text-sm-start">
+                <i class="bi bi-exclamation-triangle-fill mx-2 ms-4"></i>
+                <span class="sidebar-text">Report</span>
               </button>
-              <button class="btn sidebar-btn text-sm-center fs-6 itemhistory-button">
-                <div class="sidebar-button">
-                  <i class="bi bi-archive-fill sidebar-icon fa-xl pe-4"></i>
-                  <span class="sidebar-text">Item History</span>
-                </div>
-                </button>
-              <button class="btn sidebar-btn text-sm-center fs-6 messages-button">
-                <div class="sidebar-button">
-                  <i class="bi bi-envelope-fill sidebar-icon fa-xl pe-4"></i>
-                  <span class="sidebar-text">Messages</span>
-                </div>  
+              <button class="btn sidebar-btn text-sm-start">
+                <i class="bi bi-archive-fill mx-2 ms-4"></i>
+                <span class="sidebar-text">Item History</span>
+              </button>
+              <button class="btn sidebar-btn text-sm-start">
+                <i class="bi bi-envelope-fill mx-2 ms-4"></i>
+                <span class="sidebar-text">Messages</span>
               </button>
             </div>
             <!-- Support Section -->
-            <div class="px-4 pt-5">
+            <div class="offcanvas-support row py-2 px-4 m-0">
               <a class="text-decoration-none fs-6">
                 <i class="bi bi-headset"></i>
-                <small class="text-decoration-none aboutuslink">Need help?</small>
+                <small class="text-decoration-none">Need help?</small>
               </a>
               <br>
-              <hr class="">
-            </div>
-            <div class="row w-100 px-4">
-              <small class="text-start message">For more questions, inquiries, and suggestions</small><br>
-              <a class="fs-6 text-decoration-none mt-2">
-                <small class="aboutuslink">About us</small>
-                <br>
+              <hr class="m-auto">
+              <span class="text-sm-start">For inquiries and suggestions</span>
+              <a class="fs-6 text-decoration-none">
+                <small class="">About us</small>
               </a>
-              <a href="#" class="text-decoration-none mt-5">
+            </div>
+            <!-- Footer  -->
+            <div class="p-0 mt-5">
+              <a href="#" class="text-decoration-none mx-4">
                 <img class="img-fluid signout-icon" src="logOutIcon.png" alt="signouticon">
-                <small class="logoutlink">Sign-out</small>
+                <small class="mx-1">Sign-out</small>
               </a>
             </div>
           </div>
         </div>
         <main class="col p-0">
           <nav class="navbar navbar-expand-lg bg-body flex-nowrap topnav">
-            <div class="container-fluid d-flex z-2">
+            <div class="container-fluid d-flex">
               <ul class="navbar-nav nav-left align-items-center nav1">
                 <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#usersidebar" aria-controls="usersidebar">
                   <img src="OptionIcon.png" class="sidebutton">
@@ -337,7 +254,7 @@
                 </a>
               </ul>
 
-              <div class="container-fluid d-flex searchbarDIV">
+              <div class="container-fluid d-flex searchbarDIV ">
                   <div class="input-group start-0 ">
                     <input type="text" class="form-control rounded-5 searchbarcolor large" placeholder="Search..." aria-label="Search" aria-describedby="search-addon">
                     <input type="text" class="form-control rounded-5 searchbarcolor small" placeholder="" aria-label="Search" aria-describedby="search-addon">
@@ -348,51 +265,53 @@
               </div>
               
                     
-              <ul class="navbar-nav nav-right nav2 container-fluid w-auto h-auto justify-content-around align-items-center">
+              <ul class="navbar-nav me-2 nav-right nav2">
                 <li class="nav-item dropdown">
                   <button class="nav-link flo-logo-notif" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-bell-fill fa-lg"></i>
+                    <i class="bi bi-bell-fill"></i>
                   </button>
                   <ul class="dropdown-menu">
                     Puti nagseselos ako
                   </ul>
                 </li>
-                <a class="nav-link" href="#">
-                  <i class="bi bi-person-circle fa-3x"></i>   
+                <a class="nav-link border" href="#">
+                  <i class="img-placeholder">
+                    <img src="https://via.placeholder.com/30" alt="profile">    
+                  </i>
                 </a>
               </ul>
 
             </div>
           </nav>
 
-          <!-- Content -->
-                <div class="container px-3 py-1 bg-image">
-                  <div class="row px-1 py-1">
+                <!-- Content -->
+                <div class="container-fluid px-2 py-1 bg-image">
+                  <div class="row px-3 py-1">
+  
+                    <div class="page-header py-5 d-flex">
+                      <h3 class="Feedheader categories-text">Recently reported</h3>
+                    </div>
   
                     <div class="swiper mySwiper">
-                      <div class="page-header py-5 d-flex">
-                        <h3 class="Feedheader categories-text ps-5 ">Recently reported</h3>
-                      </div>
-  
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <div class="container card rounded-3 py-1 reportcard">
                             <div class="card-body-status p-1">
                               <i class="bi bi-exclamation-triangle-fill text-danger"></i>
-                              <small class="text-light report-status">Missing an Item</small>
+                              <small class="text-light">Missing an Item</small>
                             </div>
                             <div class="container d-flex px-3">
                               <i class="bi bi-person-fill fa-5x text-light"></i>
                               <div class="container my-4">
-                                <span class="text-sm text-light username">Username</span>
+                                <span class="text-sm text-light">Username</span>
                                 <br>
-                                <small class="text-sm dateposted">10s Ago</small>
+                                <small class="text-sm text-dark">10s Ago</small>
                               </div>
                             </div>
                             <div class="card-body d-flex border border-info px-3 info">
                               <div class="row col-8">
-                                <small class="text-light"><span>Name:</span></small>
-                                <small class="text-light"><span>Role:</span></small>
+                                <small class="text-light">Name:</small>
+                                <small class="text-light">Role:</small>
                                 <small class="text-light">Contact:</small>
                                 <small class="text-light">Lost Item:</small>
                               </div>
@@ -952,10 +871,10 @@
         slidesPerView: 3,
       },
       1250: {
-        slidesPerView: 4,
+        slidesPerView: 5,
       },
       2460: {
-        slidesPerView: 6,
+        slidesPerView: 7,
       },
         }
   });
