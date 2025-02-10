@@ -179,7 +179,6 @@
       }
       .swiper-button-next,
       .swiper-button-prev {
-        position: absolute;
         padding: 30px;
         margin: 5px;
         background-color: whitesmoke
@@ -272,7 +271,7 @@
               </div>
               
                     
-              <ul class="navbar-nav me-2 nav-right nav2">
+              <ul class="navbar-nav me-2 gap-3 nav-right nav2">
                 <li class="nav-item dropdown">
                   <button class="nav-link flo-logo-notif" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-bell-fill"></i>
@@ -281,7 +280,7 @@
                     Puti nagseselos ako
                   </ul>
                 </li>
-                <a class="nav-link border" href="#">
+                <a class="nav-link" href="#">
                   <i class="bi bi-person-circle fa-2x">
                   </i>
                 </a>
@@ -294,10 +293,11 @@
                 <div class="container-fluid py-1 bg-image">
                   <div class="row py-1">
   
-                    <div class="page-header py-5 d-flex">
-                      <h3 class="Feedheader categories-text">Recently reported</h3>
+                    <div class="page-header py-5 px-3">
+                      <h3 class="categories-text px-3">Recently reported</h3>
                     </div>
   
+                    <!-- Recently Reported -->
                     <div class="swiper mySwiper">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -542,12 +542,12 @@
                     </div>
                   
   
-                  <div class="container py-5">
-                    <hr>
-                    <h2 class="categories-text">Recently Lost</h2>
+                  <div class="container py-5 px-3">
+                    <hr class="border-2">
+                    <h3 class="categories-text px-3">Recently Lost</h3>
                   </div>
 
-                    
+                  <!-- Recently Lost -->
                   <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
@@ -793,9 +793,9 @@
 
                   
                   <!-- Recently Found -->
-                  <div class="container py-5">
-                    <hr>
-                    <h2 class="categories-text">Recently Found</h2>
+                  <div class="container py-5 px-3">
+                    <hr class="border-2">
+                    <h3 class="categories-text px-3">Recently Found</h3>
                   </div>
 
                   <div class="swiper mySwiper">
@@ -1046,7 +1046,6 @@
 
 <script>
   var swiper = new Swiper(".mySwiper", {
-    centeredSlides: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -1057,7 +1056,6 @@
       },
       700: {
         slidesPerView: 2,
-        spaceBetween: 0
       },
       965: {
         slidesPerView: 3,
