@@ -1,0 +1,4 @@
+.flo-logo-home{
+    width: clamp(75px, 10vw, 110px);
+    height: auto;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <title>FLO</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-2 col-xl-2 px-0 border">
+                <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 text-black min-vh-100">
+                    <ul class="row ps-5 my-3">
+                      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#usersidebar" aria-controls="usersidebar">
+                        <img src="assets/OptionIcon.png" class="sidebutton">
+                      </button>
+                      <a class="nav-link m-0 ms-2" href="#">
+                        <i class="img-fluid">
+                          <img src="assets/FLO_LOGO.png" alt="logo" class="flo-logo-home">    
+                        </i>
+                      </a>
+                    </ul>
+                      <!-- Buttons  -->
+                      <div class="offcanvas-body flex-column p-0 m-0 flex">
+                        <div class="sidebar-btn-group p-0 mt-4">
+                          <button class="btn text-start ps-5 fs-6 border-right-0 border-bottom-0 border-top-0 home-button active">
+                            <div class="sidebar-button">
+                              <i class="bi bi-house-door-fill sidebar-icon fa-xl pe-4"></i>
+                              <span class="sidebar-text">Home</span>
+                            </div>
+                          </button>
+                          <button class="btn text-start ps-5 fs-6 border-right-0 border-bottom-0 border-top-0">
+                            <div class="sidebar-button">
+                              <i class="bi bi-grid-fill sidebar-icon fa-xl pe-4"></i>
+                              <span class="sidebar-text">Dashboard</span>
+                            </div>
+                          </button>
+                          <button class="btn text-start ps-5 fs-6 report-button">
+                            <div class="sidebar-button">
+                              <i class="bi bi-exclamation-triangle-fill sidebar-icon fa-xl pe-4"></i>
+                              <span class="sidebar-text">Report</span>
+                            </div>
+                          </button>
+                          <button class="btn text-start ps-5 sidebar-btn fs-6 itemhistory-button">
+                            <div class="sidebar-button">
+                              <i class="bi bi-archive-fill sidebar-icon fa-xl pe-4"></i>
+                              <span class="sidebar-text">Item History</span>
+                            </div>
+                          </button>
+                          <button class="btn text-start ps-5 sidebar-btn fs-6 messages-button">
+                            <div class="sidebar-button">
+                              <i class="bi bi-person-fill sidebar-icon fa-xl pe-4"></i>
+                              <span class="sidebar-text">Users</span>
+                            </div>  
+                          </button>
+                        </div>
+                        <!-- Support Section -->
+                        <div class="px-4 pt-5">
+                          <a class="text-decoration-none fs-6">
+                            <i class="bi bi-headset"></i>
+                            <small class="text-decoration-none aboutuslink">Need help?</small>
+                          </a>
+                          <br>
+                          <hr class="">
+                        </div>
+                        <div class="row w-100 px-4">
+                          <small class="text-start message">For more questions, inquiries, and suggestions</small><br>
+                          <a class="fs-6 text-decoration-none mt-2">
+                            <small class="aboutuslink">About us</small>
+                            <br>
+                          </a>
+                          <a href="#" class="text-decoration-none mt-5">
+                            <img class="img-fluid signout-icon" src="assets/logOutIcon.png" alt="signouticon">
+                            <small class="logoutlink">Sign-out</small>
+                          </a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col py-3">
+              <nav class="row position-static navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <div class="container-fluid d-flex searchbarDIV col-md-5">
+                    <div class="input-group start-0">
+                      <input type="text" class="form-control rounded-5 searchbarcolor large" placeholder="Search..." aria-label="Search" aria-describedby="search-addon">
+                      <input type="text" class="form-control rounded-5 searchbarcolor small" placeholder="" aria-label="Search" aria-describedby="search-addon">
+                      <button class="btn search-bar-icon rounded-5" type="button" id="search-addon">
+                        <i class="bi bi-search text-primary"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item dropdown">
+                        <a class="">
+                          <i class="bi bi-bell-fill fa-lg"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="bi bi-person-circle fa-2x">
+                          </i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <main class="container-fluid w-100 h-100">
+                <div class="px-5 border-5">
+                  test 1
+                </div>
+              </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

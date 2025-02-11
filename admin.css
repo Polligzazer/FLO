@@ -1,0 +1,42 @@
+.flo-logo-home{
+   width: clamp(75px, 10vw, 110px);
+   height: auto;
+}
+.signout-icon{
+   width: clamp(5px, 7vw, 20px);
+   height: auto;
+}
+.sidebutton{
+   width:clamp(5px, 7vw, 37px);
+   height:auto;
+}
+.sidebar-btn-group button{
+   font-size: 20px;
+   color: #2169ac;
+   width: 100% !important;
+   height: 20% !important;
+}
+/* Search */
+.search-bar {
+   max-width: 500px;
+   margin: auto auto;
+}
+input.large{
+   display: flex;
+}
+input.small{
+   display: none;
+}
+.search-bar-icon{
+   z-index: 10 !important;
+   position: relative;
+   right: 40px;
+}
+@media (max-width: 768px){
+   input.large{
+     display: none;
+   }
+   input.small{
+      display: flex;
+   }
+}
