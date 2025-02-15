@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    
+    <title>FLO</title>
+    <style>
+      .pagination {
+    float: right;
+    margin: 0 0 5px;
+}
+.pagination li a {
+    border: none;
+    font-size: 13px;
+    min-width: 30px;
+    min-height: 30px;
+    color: #999;
+    margin: 0 2px;
+    line-height: 30px;
+    border-radius: 2px !important;
+    text-align: center;
+    padding: 0 6px;
+}
+.pagination li a:hover {
+    color: #666;
+}	
+.pagination li.active a, .pagination li.active a.page-link {
+    background: #03A9F4;
+}
+.pagination li.active a:hover {        
+    background: #0397d6;
+}
+.pagination li.disabled i {
+    color: #ccc;
+}
+.pagination li i {
+    font-size: 16px;
+    padding-top: 6px
+}
+.hint-text {
+    float: left;
+    margin-top: 10px;
+    font-size: 13px;
+}
+      .history-card{
+        background: #2169ac;
+      }
+    </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <!-- Sidebar (Desktop & Mobile Offcanvas) -->
+        <div class="col-auto col-sm-0 col-lg-3 col-xl-2 px-0">
+            <div class="d-none d-lg-flex flex-column justify-content-between min-vh-100 bg-white p-0" id="sidebarLarge" style="z-index: 1200;">
+                <!-- Sidebar Header -->
+                <div class="sidebar-header d-flex align-items-center gap-3 w-100 p-3 mb-5">
+                    <a class="d-flex">
+                        <img src="assets/OptionIcon.png" class="sidebutton">
+                    </a>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="assets/FLO_LOGO.png" alt="logo" class="flo-logo-home img-fluid">
+                    </a>
+                </div>
+
+                <!-- Sidebar Buttons -->
+                <ul class="nav nav-pills flex-column flex-grow-1 w-100 mt-lg-3">
+                    <li class="sidebar-btn-group d-flex flex-column gap-2 w-100">
+                      <a class="btn text-start fs-6 home-button">
+                          <i class="bi bi-house-door-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                          <span class="sidebar-text">Home</span>
+                      </a>
+                      <a class="btn text-start fs-6" href="admin.htm" target="_self">
+                          <i class="bi bi-grid-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                          <span class="sidebar-text">Dashboard</span>
+                      </a>
+                      <a class="btn text-start fs-6">
+                          <i class="bi bi-exclamation-triangle-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                          <span class="sidebar-text">Report</span>
+                      </a>
+                      <a class="btn text-start fs-6 active">
+                          <i class="bi bi-archive-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                          <span class="sidebar-text">Item History</span>
+                      </a>
+                      <a class="btn text-start fs-6" href="admin-usertab.htm" target="_self">
+                          <i class="bi bi-person-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                          <span class="sidebar-text">Users</span>
+                      </a>
+                    </li>
+                </ul>
+
+                <!-- Sidebar Footer -->
+                <div class="mt-auto w-100 p-3 text-start">
+                    <a class="text-decoration-none fs-6 d-flex align-items-center justify-content-start">
+                        <i class="bi bi-headset pe-2"></i>
+                        <small>Need help?</small>
+                    </a>
+                    <hr class="mx-auto border-3 text-primary">
+                    <small>For inquiries and suggestions</small>
+                    <a class="fs-6 text-decoration-none d-block mt-2 mb-5">
+                        <small>About us</small>
+                    </a>
+
+                    <div class="mt-3">
+                        <a href="#" class="text-decoration-none d-flex align-items-center justify-content-start">
+                            <img class="img-fluid signout-icon me-2" src="assets/logOutIcon.png" alt="signouticon">
+                            <small>Sign-out</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offcanvas Sidebar (For Small Screens) -->
+            <div class="offcanvas offcanvas-start flex-column d-lg-none bg-white shadow" id="sidebarMenu">
+                <!-- Sidebar Header -->
+                <div class="offcanvas-header d-flex align-items-center gap-3 w-100 py-2 px-4">
+                  <button type="button" class="btn border-0" data-bs-dismiss="offcanvas">
+                      <img src="assets/OptionIcon.png" class="sidebutton">
+                  </button>
+                  <a href="#" class="d-flex align-items-center">
+                      <img src="assets/FLO_LOGO.png" alt="logo" class="flo-logo-home img-fluid">
+                  </a>
+                </div>
+                <div class="offcanvas-body p-0">
+                    <ul class="nav nav-pills flex-column flex-grow-1 w-100 mt-lg-3">
+                        <li class="sidebar-btn-group d-flex flex-column p-0 mt-3">
+                            <a class="btn text-start fs-6 home-button">
+                                <i class="bi bi-house-door-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                                <span class="sidebar-text">Home</span>
+                            </a>
+                            <a class="btn text-start fs-6">
+                                <i class="bi bi-grid-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                                <span class="sidebar-text">Dashboard</span>
+                            </a>
+                            <a class="btn text-start fs-6" href="admin.htm" target="_self">
+                                <i class="bi bi-exclamation-triangle-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                                <span class="sidebar-text">Report</span>
+                            </a>
+                            <a class="btn text-start fs-6 active">
+                                <i class="bi bi-archive-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                                <span class="sidebar-text">Item History</span>
+                            </a>
+                            <a class="btn text-start fs-6" href="admin-usertab.htm" target="_self">
+                                <i class="bi bi-person-fill sidebar-icon fa-xl pe-3 ms-sm-3"></i>
+                                <span class="sidebar-text">Users</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Sidebar Footer -->
+                    <div class="mt-auto w-100 p-3 text-start">
+                        <a class="text-decoration-none fs-6 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-headset pe-2"></i>
+                            <small>Need help?</small>
+                        </a>
+                        <hr class="w-75 mx-auto">
+                        <small>For inquiries and suggestions</small>
+                        <a class="fs-6 text-decoration-none d-block mt-2">
+                            <small>About us</small>
+                        </a>
+
+                        <div class="mt-3">
+                            <a href="#" class="text-decoration-none d-flex align-items-center justify-content-start">
+                                <img class="img-fluid signout-icon me-2" src="assets/logOutIcon.png" alt="signouticon">
+                                <small>Sign-out</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="navbar bg-white d-flex align-items-center position-fixed w-100 justify-content-between px-2" style="z-index: 1000;">
+          <button class="btn d-lg-none p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+              <img src="assets/OptionIcon.png" class="sidebutton" style="width: 24px;">
+            </button>
+            
+            <div class="searchbarDIV flex-grow-1 d-flex justify-content-center">
+              <div class="input-group" style="max-width: 400px;">
+                <input type="text" class="form-control rounded-5 searchbarcolor large" placeholder="Search..." aria-label="Search">
+                <input type="text" class="form-control rounded-5 searchbarcolor small" placeholder="" aria-label="Search">
+                <button class="btn search-bar-icon rounded-5" type="button">
+                  <i class="bi bi-search text-primary"></i>
+                  </button>
+              </div>
+            </div>
+      
+          <div class="nav-right d-flex align-items-center gap-5 me-3">
+            <a class="nav-link">
+              <i class="bi bi-bell-fill text-primary fa-2x"></i>
+            </a>
+            <a class="nav-link" href="#">
+              <i class="bi bi-person-circle text-dark fa-3x"></i>
+            </a>
+          </div>
+        </nav>
+        <!-- Main Content Area -->
+        <div class="col p-0 bg-body align-items-center justify-content-center">
+          <!-- Main Dashboard Content -->
+          <main class="p-3 py-lg-5 my-5 mt-5">
+
+            <div class="row container-fluid px-5 text-center align-items-center">
+              <div class="my-4 text-start">
+                <h3 class="text-start"><b>Item History</b></h3>
+                <small>Managing securing and monitoring report logs</small>
+              </div>
+            </div>
+              
+            <div class="px-5" id="itemhistory">
+              <div class="btn-group d-flex mb-3" role="group">
+                <!-- Radio 1 -->
+                <input type="radio" class="btn-check" name="options" id="radio1" data-bs-toggle="collapse" data-bs-target="#panel1" aria-expanded="false" autocomplete="off">
+                <label class="btn btn-outline-primary w-50" for="radio1">Option 1</label>
+    
+                <!-- Radio 2 -->
+                <input type="radio" class="btn-check" name="options" id="radio2" data-bs-toggle="collapse" data-bs-target="#panel2" aria-expanded="false" autocomplete="off">
+                <label class="btn btn-outline-primary w-50" for="radio2">Option 2</label>
+              </div>
+    
+              <!-- Collapsible Panels -->
+              <div class="accordion">
+                  <div id="panel1" class="collapse" data-bs-parent=".accordion">
+                    <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <!-- Single Item Post -->
+                        <div class="card mb-3 shadow-sm text-light history-card">
+                          <div class="row g-0">
+                              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                  <!-- <img src="https://via.placeholder.com/150" class="img-fluid rounded-start col" alt="Item"> -->
+                                  <i class="col bi bi-box2-fill text-center fa-5x"></i>
+                                  <div class="col">
+                                    <span>@ExampleUsername</span>
+                                    <small class="text-body-secondary">School ID: 02000123817</small>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 border-start border-3 border-light position-relative">
+                                  <div class="card-body row">
+                                      <span class="card-text"><b>Claimed by:</b> Juan Dela Cruz</span>
+                                      <span class="card-text"><b>Date Claimed:</b> August 28, 2024</span>
+                                      <span class="card-text"><b>Role:</b> Student (MAWD-12A)</span>
+                                      <span class="card-text"><b>Contact:</b> 09123676121</span>
+                                      <span class="card-text"><b>Lost Item:</b> Wallet</span>
+                                      <div class="d-flex align-items-center justify-content-end w-100 position-absolute bottom-0 mb-1">
+                                        <i class="bi bi-chat-dots fa-2x text-light"></i>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Single Item Post -->
+                      <div class="card mb-3 shadow-sm text-light history-card">
+                          <div class="row g-0">
+                              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                  <!-- <img src="https://via.placeholder.com/150" class="img-fluid rounded-start col" alt="Item"> -->
+                                  <i class="col bi bi-box2-fill text-center fa-5x"></i>
+                                  <div class="col">
+                                    <span>@ExampleUsername</span>
+                                    <small class="text-body-secondary">School ID: 02000123817</small>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 border-start border-3 border-light position-relative">
+                                  <div class="card-body row">
+                                      <span class="card-text"><b>Claimed by:</b> Juan Dela Cruz</span>
+                                      <span class="card-text"><b>Date Claimed:</b> August 28, 2024</span>
+                                      <span class="card-text"><b>Role:</b> Student (MAWD-12A)</span>
+                                      <span class="card-text"><b>Contact:</b> 09123676121</span>
+                                      <span class="card-text"><b>Lost Item:</b> Wallet</span>
+                                      <div class="d-flex align-items-center justify-content-end w-100 position-absolute bottom-0 mb-1">
+                                        <i class="bi bi-chat-dots fa-2x text-light"></i>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Single Item Post -->
+                      <div class="card mb-3 shadow-sm text-light history-card">
+                          <div class="row g-0">
+                              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                  <!-- <img src="https://via.placeholder.com/150" class="img-fluid rounded-start col" alt="Item"> -->
+                                  <i class="col bi bi-box2-fill text-center fa-5x"></i>
+                                  <div class="col">
+                                    <span>@ExampleUsername</span>
+                                    <small class="text-body-secondary">School ID: 02000123817</small>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 border-start border-3 border-light position-relative">
+                                  <div class="card-body row">
+                                      <span class="card-text"><b>Claimed by:</b> Juan Dela Cruz</span>
+                                      <span class="card-text"><b>Date Claimed:</b> August 28, 2024</span>
+                                      <span class="card-text"><b>Role:</b> Student (MAWD-12A)</span>
+                                      <span class="card-text"><b>Contact:</b> 09123676121</span>
+                                      <span class="card-text"><b>Lost Item:</b> Wallet</span>
+                                      <div class="d-flex align-items-center justify-content-end w-100 position-absolute bottom-0 mb-1">
+                                        <i class="bi bi-chat-dots fa-2x text-light"></i>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                        
+                    </div>
+                </div>
+                  </div>
+      
+                  <div id="panel2" class="collapse" data-bs-parent=".accordion">
+                    <div class="row">
+                      <div class="col-md-8 mx-auto">
+                          <!-- Single Item Post -->
+                          <div class="card mb-3 shadow-sm text-light history-card">
+                              <div class="row g-0">
+                                  <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                      <!-- <img src="https://via.placeholder.com/150" class="img-fluid rounded-start col" alt="Item"> -->
+                                      <i class="col bi bi-box2-fill text-center fa-5x"></i>
+                                      <div class="col">
+                                        <span>@ExampleUsername</span>
+                                        <small class="text-body-secondary">School ID: 02000123817</small>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 border-start border-3 border-light position-relative">
+                                      <div class="card-body row">
+                                          <span class="card-text"><b>Claimed by:</b> Juan Dela Cruz</span>
+                                          <span class="card-text"><b>Date Claimed:</b> August 28, 2024</span>
+                                          <span class="card-text"><b>Role:</b> Student (MAWD-12A)</span>
+                                          <span class="card-text"><b>Contact:</b> 09123676121</span>
+                                          <span class="card-text"><b>Lost Item:</b> Wallet</span>
+                                          <div class="d-flex align-items-center justify-content-end w-100 position-absolute bottom-0 mb-1">
+                                            <i class="bi bi-chat-dots fa-2x text-light"></i>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- Single Item Post -->
+                          <div class="card mb-3 shadow-sm text-light history-card">
+                              <div class="row g-0">
+                                  <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                      <!-- <img src="https://via.placeholder.com/150" class="img-fluid rounded-start col" alt="Item"> -->
+                                      <i class="col bi bi-box2-fill text-center fa-5x"></i>
+                                      <div class="col">
+                                        <span>@ExampleUsername</span>
+                                        <small class="text-body-secondary">School ID: 02000123817</small>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 border-start border-3 border-light position-relative">
+                                      <div class="card-body row">
+                                          <span class="card-text"><b>Claimed by:</b> Juan Dela Cruz</span>
+                                          <span class="card-text"><b>Date Claimed:</b> August 28, 2024</span>
+                                          <span class="card-text"><b>Role:</b> Student (MAWD-12A)</span>
+                                          <span class="card-text"><b>Contact:</b> 09123676121</span>
+                                          <span class="card-text"><b>Lost Item:</b> Wallet</span>
+                                          <div class="d-flex align-items-center justify-content-end w-100 position-absolute bottom-0 mb-1">
+                                            <i class="bi bi-chat-dots fa-2x text-light"></i>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- Single Item Post -->
+                          <div class="card mb-3 shadow-sm text-light history-card">
+                              <div class="row g-0">
+                                  <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                      <!-- <img src="https://via.placeholder.com/150" class="img-fluid rounded-start col" alt="Item"> -->
+                                      <i class="col bi bi-box2-fill text-center fa-5x"></i>
+                                      <div class="col">
+                                        <span>@ExampleUsername</span>
+                                        <small class="text-body-secondary">School ID: 02000123817</small>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 border-start border-3 border-light position-relative">
+                                      <div class="card-body row">
+                                          <span class="card-text"><b>Claimed by:</b> Juan Dela Cruz</span>
+                                          <span class="card-text"><b>Date Claimed:</b> August 28, 2024</span>
+                                          <span class="card-text"><b>Role:</b> Student (MAWD-12A)</span>
+                                          <span class="card-text"><b>Contact:</b> 09123676121</span>
+                                          <span class="card-text"><b>Lost Item:</b> Wallet</span>
+                                          <div class="d-flex align-items-center justify-content-end w-100 position-absolute bottom-0 mb-1">
+                                            <i class="bi bi-chat-dots fa-2x text-light"></i>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+          
+                          
+          
+                          
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
